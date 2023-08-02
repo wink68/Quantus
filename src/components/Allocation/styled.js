@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
+  margin-top: 170px;
   margin-bottom: 110px;
   width: 1020px;
   min-height: 810px;
@@ -41,4 +42,12 @@ export const Subtitle = styled.div`
   margin-bottom: 18px;
   font-size: 16px;
   font-weight: 300;
+`;
+
+export const TermTitle = styled.div`
+  margin-top: 80px;
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 18px;
 `;

@@ -1,12 +1,12 @@
 import { styled } from 'styled-components';
 
-export const IPWrap = styled.div`
+export const BBWrap = styled.div`
   position: relative;
   display: flex;
   width: 640px;
 `;
 
-export const IPIput = styled.input`
+export const BBIput = styled.input`
   position: relative;
   width: 640px;
   height: 46px;
@@ -33,7 +33,7 @@ export const IPIput = styled.input`
   }
 `;
 
-export const PriceName = styled.p`
+export const PerName = styled.p`
   position: absolute;
   bottom: 13px;
   right: 20px;
@@ -42,4 +42,12 @@ export const PriceName = styled.p`
 
   font-size: 16px;
   color: rgb(230 230 230);
+`;
+
+export const Explain = styled.p`
+  margin-top: 10px;
+  margin-bottom: 0px;
+
+  font-size: 12px;
+  color: rgb(159 159 159);
 `;

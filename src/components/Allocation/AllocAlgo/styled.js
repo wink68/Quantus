@@ -10,6 +10,7 @@ export const AlgoInput = styled.input`
   position: relative;
   width: 640px;
   height: 46px;
+  z-index: 1;
   
   background-color: rgb(14 14 14);
   border: 1px solid ${({ isopen }) => (isopen ? 'rgba(236 97 38 / 30%)' : 'rgb(159 159 159)' )};
@@ -19,6 +20,9 @@ export const AlgoInput = styled.input`
   font-size: 16px;
   font-weight: 300;
   cursor: pointer;
+  &:hover {
+    border: 1px solid rgb(230 230 230);
+  }
 `;
 
 export const ToggleBtn = styled.div`
@@ -28,6 +32,7 @@ export const ToggleBtn = styled.div`
   height: 46px;
   display: flex;
   align-items: center;
+  z-index: 2;
 
   cursor: pointer;
   transform: ${({ isopen }) => (isopen ? 'scaleY(-1)' : 'scaleY(1)')};
@@ -35,14 +40,14 @@ export const ToggleBtn = styled.div`
 `;
 
 export const OptionList = styled.div`
-  margin-top: 50px;
+  margin-top: 60px;
   width: 100%;
   max-height: 500px;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
+  z-index: 3;
 
   background-color: rgb(14 14 14);
   border: 1px solid rgb(62 62 62);
@@ -59,6 +64,7 @@ export const Option = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
   
   color: rgb (230 230 230);
   ${({ selected }) => selected && `

@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { AlgoInput, AlgoInputWrap, Option, OptionList, ToggleBtn } from './styled';
 
 const AllocOptions = [
-  { value: 'option1', name: '전략배분 (정적자산배분)' },
-  { value: 'option2', name: '듀얼모멘텀' },
-  { value: 'option3', name: 'VAA' },
-  { value: 'option4', name: 'DAA' },
-  { value: 'option5', name: 'BAA 공격형' },
-  { value: 'option6', name: 'BAA 중도형' },
-  { value: 'option7', name: 'LAA' },
-  { value: 'option8', name: 'HAA' },
-  { value: 'option9', name: '변형듀모멘텀' },
-  { value: 'option10', name: '가속듀얼모멘텀' },
+  { value: 1, name: '전략배분 (정적자산배분)' },
+  { value: 2, name: '듀얼모멘텀' },
+  { value: 3, name: 'VAA' },
+  { value: 4, name: 'DAA' },
+  { value: 5, name: 'BAA 공격형' },
+  { value: 6, name: 'BAA 중도형' },
+  { value: 7, name: 'LAA' },
+  { value: 8, name: 'HAA' },
+  { value: 9, name: '변형듀모멘텀' },
+  { value: 10, name: '가속듀얼모멘텀' },
 ];
 
 function Algorithm() {
@@ -35,7 +35,7 @@ function Algorithm() {
           onBlur={() => setIsOpen(false)}
           placeholder={selectedOption}
         />
-        <ToggleBtn onClick={handleToggle} isopen={isOpen}>
+        <ToggleBtn isopen={isOpen}>
           <img src='group.svg' alt='토글 화살표' />
         </ToggleBtn>
         {isOpen && <OptionList isopen={isOpen}>

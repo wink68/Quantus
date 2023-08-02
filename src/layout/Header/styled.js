@@ -1,8 +1,9 @@
 import { styled } from 'styled-components';
 
 export const Wrapper = styled.header`
+  position: fixed;
   width: 100vw;
-  z-index: 2;
+  z-index: 99;
 
   background-color: rgb(14 14 14);
 `;

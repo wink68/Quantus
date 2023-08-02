@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import { IPIput, IPWrap, PriceName } from './styled';
+import { BBIput, BBWrap, Explain, PerName } from './styled';
 
 
-function InvestPrice() {
+function BandRebalance() {
   const [inputValue, setInputValue] = useState('');
-  const [placeholder, setPlaceholder] = useState('초기 투자 금액을 입력해주세요.');
+  const [placeholder, setPlaceholder] = useState('밴드 리밸런싱 기준을 입력해주세요.');
 
   const handleInput = (e) => {
     if (isNaN(e.target.value)) {
       return;
     }
-    if (e.target.value.startsWith('0')) {
+    if (e.target.value.startsWith('00')) {
       return;
     }
     setInputValue(e.target.value);
@@ -21,26 +21,27 @@ function InvestPrice() {
   }
   const handleInputBlur = () => {
     if (!inputValue) {
-      setPlaceholder('초기 투자 금액을 입력해주세요.');
+      setPlaceholder('밴드 리밸런싱 기준을 입력해주세요.');
     }
   }
 
   return (
     <>
-      <IPWrap>
-        <IPIput
+      <BBWrap>
+        <BBIput
           type='number'
-          min='1'
+          min='0'
           value={inputValue}
           onInput={handleInput}
           onClick={handleInputClick}
           onBlur={handleInputBlur}
           placeholder={placeholder}
-        ></IPIput>
-        <PriceName>만원</PriceName>
-      </IPWrap>
+        ></BBIput>
+        <PerName>%</PerName>
+      </BBWrap>
+      <Explain>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Explain>
     </>
   );
 }
 
-export default InvestPrice;
+export default BandRebalance;
