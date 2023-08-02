@@ -35,3 +35,10 @@ export const AlgoTitle = styled.div`
   font-size: 16px;
   font-weight: 300;
 `;
+
+export const Subtitle = styled.div`
+  margin-top: 38px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 300;
+`;

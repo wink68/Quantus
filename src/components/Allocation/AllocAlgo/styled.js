@@ -7,11 +7,12 @@ export const AlgoInputWrap = styled.div`
 `;
 
 export const AlgoInput = styled.input`
+  position: relative;
   width: 640px;
   height: 46px;
   
   background-color: rgb(14 14 14);
-  border: 1px solid ${({ isFocused }) => (isFocused ? 'rgba(236 97 38 / 30%)' : 'rgb(159 159 159)' )};
+  border: 1px solid ${({ isopen }) => (isopen ? 'rgba(236 97 38 / 30%)' : 'rgb(159 159 159)' )};
   border-radius: 6px;
   text-align: center;
   text-shadow: none;
@@ -66,6 +67,7 @@ export const Option = styled.div`
     border-radius: 6px;
   `}
   &:hover {
-    
+    background-color: rgb(62 62 62);
+    border-radius: 6px;
   }
 `;
