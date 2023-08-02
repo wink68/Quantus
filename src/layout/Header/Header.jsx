@@ -1,15 +1,15 @@
-import { Head,HeadCon, LogoHead, LoginBtn, Navbar, Menu, MenuBtn, NoticeBtn } from './styled';
+import { Container, LoginBtn, LogoHeader, Menu, MenuBtn, Navbar, NoticeBtn, Wrapper } from './styled';
 
 function Header() {
   return (
-    <Head>
-      <HeadCon>
-        <LogoHead>
+    <Wrapper>
+      <Container>
+        <LogoHeader>
           <img src='logo.png' alt='로고' />
           <LoginBtn>로그인 하러가기</LoginBtn>
-        </LogoHead>
-      </HeadCon>
-      <HeadCon>
+        </LogoHeader>
+      </Container>
+      <Container>
         <Navbar>
           <Menu>
             <MenuBtn>백테스트</MenuBtn>
@@ -28,8 +28,8 @@ function Header() {
             <span>공지사항</span>
           </NoticeBtn>
         </Navbar>
-      </HeadCon>
-    </Head>
+      </Container>
+    </Wrapper>
   );
 }
 

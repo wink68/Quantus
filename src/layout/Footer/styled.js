@@ -2,8 +2,6 @@ import { styled } from 'styled-components';
 
 export const Wrapper = styled.footer`
   width: 100vw;
-  min-width: 1020px;
-  height: 374px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,8 +9,10 @@ export const Wrapper = styled.footer`
   background-color: rgb(0 0 0);
 `;
 
-export const FooterCon = styled.div`
+export const Container = styled.div`
   width: 1020px;
+  min-width: 1020px;
+  height: 374px;
   display: flex;
   justify-content: space-between;
 `;
@@ -49,11 +49,11 @@ export const FooterBtn = styled.a`
   padding-block: 6px;
   padding-inline: 27px;
   display: block;
-  text-align: end;
-
+  
   color: rgb(230 230 230);
   border: 1px solid rgb(236 38 38);
   border-radius: 16px;
+  text-align: end;
   cursor: pointer;
 `;
 

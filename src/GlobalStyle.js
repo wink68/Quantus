@@ -34,6 +34,9 @@ footer, header, hgroup, main, menu, nav, section {
 body {
   line-height: 1;
   background-color: rgb(14 14 14);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(252 252 252);
 }
 menu, ol, ul {
   list-style: none;

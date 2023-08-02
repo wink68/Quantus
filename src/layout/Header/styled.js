@@ -1,20 +1,22 @@
 import { styled } from 'styled-components';
 
-export const Head = styled.header`
-  
+export const Wrapper = styled.header`
+  width: 100vw;
+  z-index: 2;
+
+  background-color: rgb(14 14 14);
 `;
 
-export const HeadCon = styled.div`
-  width: 100vw;
+export const Container = styled.div`
   min-width: 1020px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   border-bottom: 1px solid rgb(30 30 30);
 `;
 
-export const LogoHead = styled.div`
+export const LogoHeader = styled.div`
   width: 1020px;
   height: 85px;
   display: flex;

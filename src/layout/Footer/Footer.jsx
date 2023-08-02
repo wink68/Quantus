@@ -1,10 +1,10 @@
-import { FooterBtn, FooterBtns, FooterCon, FooterInfo, PolicyBtn, PolicyBtns, Wrapper } from './styled';
+import { Container, FooterBtn, FooterBtns, FooterInfo, PolicyBtn, PolicyBtns, Wrapper } from './styled';
 
 function Footer() {
   return (
     <>
       <Wrapper>
-        <FooterCon>
+        <Container>
           <FooterInfo>
             <img src='logo.png' alt='로고' />
             <p class='title'>주식회사 퀀터스테크놀로지스</p>
@@ -22,7 +22,7 @@ function Footer() {
               <PolicyBtn href='https://www.quantus.kr/service'>이용약관</PolicyBtn>
             </PolicyBtns>
           </FooterBtns>
-        </FooterCon>
+        </Container>
       </Wrapper>
     </>
   );
