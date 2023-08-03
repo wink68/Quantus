@@ -15,10 +15,11 @@ export const AlgoInput = styled.input`
   background-color: rgb(14 14 14);
   border: 1px solid ${({ isopen }) => (isopen ? 'rgba(236 97 38 / 30%)' : 'rgb(159 159 159)' )};
   border-radius: 6px;
-  text-align: center;
-  text-shadow: none;
+  color: rgb(230 230 230);
   font-size: 16px;
   font-weight: 300;
+  text-align: center;
+  text-shadow: none;
   cursor: pointer;
   &:hover {
     border: 1px solid rgb(230 230 230);
@@ -66,7 +67,7 @@ export const Option = styled.div`
   align-items: center;
   z-index: 4;
   
-  color: rgb (230 230 230);
+  color: rgb(230 230 230);
   ${({ selected }) => selected && `
     width: 100%;
     background-color: rgba(236 97 38 / 30%);

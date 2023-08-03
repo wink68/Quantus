@@ -15,6 +15,7 @@ export const RBInput = styled.input`
   background-color: rgb(14 14 14);
   border: 1px solid rgb(159 159 159);
   border-radius: 6px;
+  color: rgb(230 230 230);
   font-size: 16px;
   font-weight: 300;
   text-align: center;

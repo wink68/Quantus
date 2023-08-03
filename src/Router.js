@@ -1,6 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, createBrowserRouter, Route, Routes } from 'react-router-dom';
 import Allocation from './components/Allocation/Allocation';
-
 
 function Router() {
   return <BrowserRouter>

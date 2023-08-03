@@ -1,5 +1,6 @@
 import Algorithm from './AllocAlgo/Algorithm';
 import BandRebalance from './BandRebalance/BandRebalance';
+import Btns from './Btns/Btns';
 import InvestPrice from './InvestPrice/InvestPrice';
 import RegularRebalance from './RegularRebalance/RegularRebalance';
 import { AlgoCon, AlgoTitle, Container, Subtitle, TermTitle, Title, Wrapper } from './styled';
@@ -23,6 +24,7 @@ function Allocation() {
             <BandRebalance />
             <TermTitle>기간 설정</TermTitle>
             <Term />
+            <Btns />
           </AlgoCon>
         </Container>
       </Wrapper>
