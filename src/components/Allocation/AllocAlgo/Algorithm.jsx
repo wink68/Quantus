@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AlgoInput, AlgoInputWrap, Option, OptionList, ToggleBtn } from './styled';
+import group from '../../../assets/group.svg';
 
 const AllocOptions = [
   { value: 1, name: '전략배분 (정적자산배분)' },
@@ -36,7 +37,7 @@ function Algorithm() {
           placeholder={selectedOption}
         />
         <ToggleBtn isopen={isOpen}>
-          <img src='group.svg' alt='토글 화살표' />
+          <img src={group} alt='토글 화살표' />
         </ToggleBtn>
         {isOpen && <OptionList isopen={isOpen}>
           {AllocOptions.map((option) => (

@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { Box, CalendarBtn, Container, InputBox, TermWrap, Title } from './styled';
+import calender from '../../../assets/calender.svg';
 
 function Term() {
   const startDate = '2003.01.01';
   const date = new Date;
   const today = `${date.getFullYear()}.${String(date.getMonth() +1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+
+  const isValid = (newValue) => {
+    const Pattern = /^\d{4}\.\d{2}.\d{2}/;
+    return Pattern.test(newValue);
+  }
 
   const [startValue, setStartValue] = useState(startDate);
   const handleStart = (e) => {
@@ -15,6 +21,14 @@ function Term() {
   const StartChange = (e) => {
     setStartValue(e.target.value);
   }
+  const StartBlur = (e) => {
+    let newValue = e.target.value;
+    if (!isValid(newValue)) {
+      setStartValue(startDate);
+    } else {
+      setStartValue(newValue);
+    }
+  }
 
   const [endValue, setEndValue] = useState(today);
   const handleEnd = (e) => {
@@ -24,7 +38,15 @@ function Term() {
   }
   const EndChange = (e) => {
     setEndValue(e.target.value);
-  }  
+  }
+  const EndBlur = (e) => {
+    let newValue = e.target.value;
+    if (!isValid(newValue)) {
+      setEndValue(today);
+    } else {
+      setEndValue(newValue);
+    }
+  }
 
   return (
     <>
@@ -38,10 +60,11 @@ function Term() {
                 value={startValue}
                 onKeyPress={handleStart}
                 onChange={StartChange}
+                onBlur={StartBlur}
               />
             </Container>
             <CalendarBtn>
-              <img src='calender.svg' alt='startDate' />
+              <img src={calender} alt='startDate' />
             </CalendarBtn>
           </Box>
         </Container>
@@ -54,10 +77,11 @@ function Term() {
                 value={endValue}
                 onKeyPress={handleEnd}
                 onChange={EndChange}
+                onBlur={EndBlur}
               />
             </Container>
             <CalendarBtn>
-              <img src='calender.svg' alt='endDate' />
+              <img src={calender} alt='endDate' />
             </CalendarBtn>
           </Box>
         </Container>

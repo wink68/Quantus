@@ -37,11 +37,11 @@ export const FooterInfo = styled.div`
 `;
 
 export const FooterBtns = styled.div`
-  margin-top: 50px;
+  padding-top: 50px;
   position: relative;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
 `;
 

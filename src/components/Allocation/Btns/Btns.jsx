@@ -1,4 +1,4 @@
-import { BtnBox, BtnsWrap, BtnTitle, FirstCon, SecondCon } from "./styled";
+import { BtnBox, BtnsWrap, BtnTitle, FirstCon, SecondCon } from './styled';
 
 function Btns() {
   return (
