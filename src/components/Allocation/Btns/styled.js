@@ -19,16 +19,16 @@ export const SecondCon = styled.div`
 `;
 
 export const BtnBox = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
   position: relative;
   width: 210px;
   height: 53px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 
-  background: linear-gradient(to right, rgb(236 97 38), rgb(236 38 38));
+  background: rgb(236 97 38);
+  border: 1px solid rgb(236 97 38);
   border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
@@ -39,4 +39,31 @@ export const BtnTitle = styled.div`
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+`;
+
+export const LoadingWrap = styled.div`
+  margin: 28px 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+
+  background-color: rgb(14 14 14);
+  border-radius: 6px;
+`;
+
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color: rgb(255 255 255);
+  text-align: center;
+`;
+
+export const LoadingSpinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
