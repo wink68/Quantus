@@ -64,7 +64,7 @@ function Term() {
               />
             </Container>
             <CalendarBtn>
-              <img src={calender} alt='startDate' />
+              <img src={calender} alt='start_date' />
             </CalendarBtn>
           </Box>
         </Container>
@@ -81,7 +81,7 @@ function Term() {
               />
             </Container>
             <CalendarBtn>
-              <img src={calender} alt='endDate' />
+              <img src={calender} alt='end_date' />
             </CalendarBtn>
           </Box>
         </Container>

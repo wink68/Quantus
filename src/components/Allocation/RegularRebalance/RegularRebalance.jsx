@@ -27,12 +27,10 @@ function RegularRebalance() {
       <RBWrap onClick={handleToggle}>
         <RBInput
           value={selectedOption}
-          onFocus={() => setIsOpen(true)}
-          onBlur={() => setIsOpen(false)}
           placeholder={selectedOption}
         />
         <ToggleBtn isopen={isOpen}>
-          <img src={group} alt='토글 화살표' />
+          <img src={group} alt='toggle_btn' />
         </ToggleBtn>
         {isOpen && <OptionList isopen={isOpen}>
           {RBOptions.map((option) => (

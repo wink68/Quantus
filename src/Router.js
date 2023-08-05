@@ -1,6 +1,6 @@
-import { BrowserRouter, createBrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Allocation from './components/Allocation/Allocation';
-import StaticAlloc from './components/Stategies/StaticAlloc/StaticAlloc';
+import StaticAlloc from './pages/Stategies/StaticAlloc/StaticAlloc';
 
 function Router() {
   return <BrowserRouter>

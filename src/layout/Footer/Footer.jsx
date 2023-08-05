@@ -7,7 +7,7 @@ function Footer() {
       <Wrapper>
         <Container>
           <FooterInfo>
-            <img src={logo} alt='로고' />
+            <img src={logo} alt='logo' />
             <p class='title'>주식회사 퀀터스테크놀로지스</p>
             <p class='content'>대표자명: 이재민 ┃ 주소: 서울특별시 강남구 선릉로 93길 54, 6층 6062호 (역삼동, 일환빌딩)</p>
             <p class='content'>사업자등록번호: 245-88-02569</p>

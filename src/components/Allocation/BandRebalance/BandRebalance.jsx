@@ -3,24 +3,25 @@ import { BBIput, BBWrap, Explain, PerName } from './styled';
 
 
 function BandRebalance() {
-  const [inputValue, setInputValue] = useState('');
+  const [rateValue, setRateValue] = useState();
   const [placeholder, setPlaceholder] = useState('밴드 리밸런싱 기준을 입력해주세요.');
 
-  const handleInput = (e) => {
-    if (isNaN(e.target.value)) {
+  const handleRate = (e) => {
+    const newRate = e.target.value;
+    if (newRate.startsWith('00')) {
       return;
     }
-    if (e.target.value.startsWith('00')) {
-      return;
+    if (newRate === '' || (Number(newRate) >= 0 && Number(newRate) <= 100)) {
+      setRateValue(newRate);
     }
-    setInputValue(e.target.value);
   }
 
-  const handleInputClick = () => {
+  const handleRateClick = () => {
     setPlaceholder('');
   }
-  const handleInputBlur = () => {
-    if (!inputValue) {
+  const handleRateBlur = (e) => {
+    const newRate = e.target.value;
+    if (!newRate || !isNaN(newRate)) {
       setPlaceholder('밴드 리밸런싱 기준을 입력해주세요.');
     }
   }
@@ -31,12 +32,13 @@ function BandRebalance() {
         <BBIput
           type='number'
           min='0'
-          value={inputValue}
-          onInput={handleInput}
-          onClick={handleInputClick}
-          onBlur={handleInputBlur}
+          max='100'
+          value={rateValue}
+          onChange={handleRate}
+          onClick={handleRateClick}
+          onBlur={handleRateBlur}
           placeholder={placeholder}
-        ></BBIput>
+        />
         <PerName>%</PerName>
       </BBWrap>
       <Explain>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Explain>
