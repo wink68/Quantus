@@ -13,7 +13,7 @@ const KindOptions = [
   { value: '미국 주식' },
 ];
 
-function Asset() {
+function Asset({ num, onRemove }) {
   // 종류
   const [isKind, setIsKind] = useState(false);
   const [selectedKind, setSelectedKind] = useState('');
@@ -55,9 +55,9 @@ function Asset() {
         <CenterCon>
           <ColumnCon>
             <CloseBtnCon>
-              <CloseBtn src={close} />
+              <CloseBtn src={close} onClick={() => onRemove(num)} />
             </CloseBtnCon>
-            <NumTitle>자산 01</NumTitle>
+            <NumTitle>자산 {num.toString().padStart(2, '0')}</NumTitle>
             <ContentCon>
               <KindCon>
                 <KindTitle>종류</KindTitle>

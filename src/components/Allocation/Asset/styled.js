@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 
 export const AssetWrap = styled.div`
   padding-left: 64px;
+  padding-top: 38px;
 `;
 
 export const AssetCon = styled.div`

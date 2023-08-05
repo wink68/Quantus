@@ -5,13 +5,13 @@ export const Wrapper = styled.div`
 `;
 
 export const AssetTitle = styled.p`
-  margin: 80px 0px 18px;
+  margin: 80px 0px 0px;
   font-size: 18px;
   font-weight: 500;
 `;
 
 export const Container = styled.div`
-  margin-top: 18px;
+  margin-top: 0px;
   margin-left: -64px;
   display: flex;
   flex-flow: row wrap;
@@ -20,6 +20,7 @@ export const Container = styled.div`
 
 export const AssetWrap = styled.div`
   padding-left: 64px;
+  padding-top: 38px;
 `;
 
 export const AddBox = styled.div`
