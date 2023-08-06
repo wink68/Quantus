@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import group from '../../../assets/group.svg';
 import * as S from './styled';
 
@@ -16,8 +17,13 @@ const AllocOptions = [
 ];
 
 function Algorithm() {
+  const { kind } = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
+
+  useEffect(() => {
+    setSelectedOption(kind || '');
+  }, [kind]);
 
   const handleInput = () => {
     setIsOpen(!isOpen);
@@ -26,7 +32,15 @@ function Algorithm() {
   const handleOption = (option) => {
     setSelectedOption(option.name);
     setIsOpen(false);
-  }
+  };
+  // 주소 변경
+  useEffect(() => {
+    if (selectedOption === '전략배분 (정적자산배분)') {
+      window.history.replaceState(null, null, '/alloc/static_alloc');
+    } else {
+      window.history.replaceState(null, null, '/alloc');
+    }
+  }, [selectedOption]);
 
   return (
     <>

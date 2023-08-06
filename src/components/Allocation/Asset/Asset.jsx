@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import close from '../../../assets/close.svg';
 import group from '../../../assets/group.svg';
-import { useState } from 'react';
+import data from '../../../data/data.json';
 import * as S from './styled';
 
 const KindOptions = [
@@ -12,6 +13,7 @@ const KindOptions = [
   { value: '한국 주식' },
   { value: '미국 주식' },
 ];
+const groupData = data;
 
 function Asset({ num, onRemove }) {
   // 종류
@@ -26,6 +28,24 @@ function Asset({ num, onRemove }) {
     setIsKind(false);
   }
   // 자산군
+  const [isAsset, setIsAsset] = useState(false);
+  const [selectedAsset, setSelectedAsset] = useState('');
+
+  const handleAssetInput = () => {
+    setIsAsset(!isAsset);
+  }
+  const handleAsset = (option) => {
+    setSelectedAsset(option['종목명']);
+    setIsAsset(false);
+  }
+
+  const [getData, setData] = useState([]);
+  useEffect(() => {
+  const fetchData = () => {
+    setData(groupData[selectedKind] || []);
+  };
+    fetchData();
+  }, [selectedKind]);
 
   // 비중
   const [rateValue, setRateValue] = useState(0);
@@ -84,11 +104,24 @@ function Asset({ num, onRemove }) {
 
               <S.ContentAssetTitle>자산군</S.ContentAssetTitle>
               <S.ContentAssetCon>
-                <S.InputCon>
-                  <S.KindInput />
+                <S.InputCon onClick={handleAssetInput}>
+                  <S.KindInput
+                    value={selectedAsset}
+                  />
                   <S.ToggleBtn>
                     <S.ToggleImg src={group} alt='asset_toggle_btn' />
                   </S.ToggleBtn>
+                  {isAsset && <S.OptionList>
+                    {getData.map((option) => (
+                      <S.Option
+                        key={option.code}
+                        onClick={() => handleAsset(option)}
+                        selected={selectedAsset === option['종목명']}
+                      >
+                        {option['종목명']}
+                      </S.Option>
+                    ))}
+                  </S.OptionList>}
                 </S.InputCon>
               </S.ContentAssetCon>
             </S.ContentCon>

@@ -13,7 +13,6 @@ function Btns() {
       interval = setInterval(() => {
         if (progress <= 140) {
           setProgress(progress + 20);
-          console.log(progress);
         } else {
           clearInterval(interval);
           setIsLoading(false);
