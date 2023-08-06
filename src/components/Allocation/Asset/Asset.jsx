@@ -1,7 +1,7 @@
-import { AssetCon, AssetWrap, CenterCon, CloseBtn, CloseBtnCon, ColumnCon, ContentAssetCon, ContentAssetTitle, ContentCon, Explain, InputCon, KindCon, KindInput, KindTitle, NumTitle, Option, OptionList, PerName, RateCon, RateInput, RateTitle, RateWrap, ToggleBtn, ToggleImg } from './styled';
 import close from '../../../assets/close.svg';
 import group from '../../../assets/group.svg';
 import { useState } from 'react';
+import * as S from './styled';
 
 const KindOptions = [
   { value: '한국 자산군' },
@@ -50,53 +50,53 @@ function Asset({ num, onRemove }) {
   }
 
   return (
-    <AssetWrap>
-      <AssetCon>
-        <CenterCon>
-          <ColumnCon>
-            <CloseBtnCon>
-              <CloseBtn src={close} onClick={() => onRemove(num)} />
-            </CloseBtnCon>
-            <NumTitle>자산 {num.toString().padStart(2, '0')}</NumTitle>
-            <ContentCon>
-              <KindCon>
-                <KindTitle>종류</KindTitle>
-                <InputCon onClick={handleKindInput}>
-                  <KindInput
+    <S.AssetWrap>
+      <S.AssetCon>
+        <S.CenterCon>
+          <S.ColumnCon>
+            <S.CloseBtnCon>
+              <S.CloseBtn src={close} onClick={() => onRemove(num)} />
+            </S.CloseBtnCon>
+            <S.NumTitle>자산 {num.toString().padStart(2, '0')}</S.NumTitle>
+            <S.ContentCon>
+              <S.KindCon>
+                <S.KindTitle>종류</S.KindTitle>
+                <S.InputCon onClick={handleKindInput}>
+                  <S.KindInput
                     value={selectedKind}
                   />
-                  <ToggleBtn isopen={isKind}>
-                    <ToggleImg src={group} alt='kind_toggle_btn' />
-                  </ToggleBtn>
-                  {isKind && <OptionList>
+                  <S.ToggleBtn isopen={isKind}>
+                    <S.ToggleImg src={group} alt='kind_toggle_btn' />
+                  </S.ToggleBtn>
+                  {isKind && <S.OptionList>
                     {KindOptions.map((option) => (
-                      <Option
+                      <S.Option
                         key={option.value}
                         onClick={() => handleKind(option)}
                         selected={selectedKind === option.value}
                       >
                         {option.value}
-                      </Option>
+                      </S.Option>
                     ))}
-                  </OptionList>}
-                </InputCon>
-              </KindCon>
+                  </S.OptionList>}
+                </S.InputCon>
+              </S.KindCon>
 
-              <ContentAssetTitle>자산군</ContentAssetTitle>
-              <ContentAssetCon>
-                <InputCon>
-                  <KindInput />
-                  <ToggleBtn>
-                    <ToggleImg src={group} alt='asset_toggle_btn' />
-                  </ToggleBtn>
-                </InputCon>
-              </ContentAssetCon>
-            </ContentCon>
+              <S.ContentAssetTitle>자산군</S.ContentAssetTitle>
+              <S.ContentAssetCon>
+                <S.InputCon>
+                  <S.KindInput />
+                  <S.ToggleBtn>
+                    <S.ToggleImg src={group} alt='asset_toggle_btn' />
+                  </S.ToggleBtn>
+                </S.InputCon>
+              </S.ContentAssetCon>
+            </S.ContentCon>
             
-            <RateCon>
-              <RateTitle>비중</RateTitle>
-              <RateWrap>
-                <RateInput
+            <S.RateCon>
+              <S.RateTitle>비중</S.RateTitle>
+              <S.RateWrap>
+                <S.RateInput
                   type='number'
                   min='0'
                   max='100'
@@ -105,14 +105,14 @@ function Asset({ num, onRemove }) {
                   onClick={handleRateClick}
                   onBlur={handleRateBlur}
                 />
-                <PerName>%</PerName>
-              </RateWrap>
-              <Explain>0 ~ 100 까지 입력할 수 있습니다.</Explain>
-            </RateCon>
-          </ColumnCon>
-        </CenterCon>
-      </AssetCon>
-    </AssetWrap>
+                <S.PerName>%</S.PerName>
+              </S.RateWrap>
+              <S.Explain>0 ~ 100 까지 입력할 수 있습니다.</S.Explain>
+            </S.RateCon>
+          </S.ColumnCon>
+        </S.CenterCon>
+      </S.AssetCon>
+    </S.AssetWrap>
   );
 }
 

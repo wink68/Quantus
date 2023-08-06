@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IPIput, IPWrap, PriceName } from './styled';
+import * as S from './styled';
 
 
 function InvestPrice() {
@@ -27,8 +27,8 @@ function InvestPrice() {
 
   return (
     <>
-      <IPWrap>
-        <IPIput
+      <S.IPWrap>
+        <S.IPIput
           type='number'
           min='1'
           value={inputValue}
@@ -36,9 +36,9 @@ function InvestPrice() {
           onClick={handleInputClick}
           onBlur={handleInputBlur}
           placeholder={placeholder}
-        ></IPIput>
-        <PriceName>만원</PriceName>
-      </IPWrap>
+        ></S.IPIput>
+        <S.PriceName>만원</S.PriceName>
+      </S.IPWrap>
     </>
   );
 }

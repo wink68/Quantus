@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { AlgoInput, AlgoInputWrap, Option, OptionList, ToggleBtn } from './styled';
 import group from '../../../assets/group.svg';
+import * as S from './styled';
 
 const AllocOptions = [
   { value: 'static_alloc', name: '전략배분 (정적자산배분)' },
@@ -30,25 +30,25 @@ function Algorithm() {
 
   return (
     <>
-      <AlgoInputWrap onClick={handleInput}>
-        <AlgoInput
+      <S.AlgoInputWrap onClick={handleInput}>
+        <S.AlgoInput
           value={selectedOption}
         />
-        <ToggleBtn isopen={isOpen}>
+        <S.ToggleBtn isopen={isOpen}>
           <img src={group} alt='toggle_btn' />
-        </ToggleBtn>
-        {isOpen && <OptionList>
+        </S.ToggleBtn>
+        {isOpen && <S.OptionList>
           {AllocOptions.map((option) => (
-            <Option
+            <S.Option
               key={option.value}
               onClick={() => handleOption(option)}
               selected={selectedOption === option.name}
             >
               {option.name}
-            </Option>
+            </S.Option>
           ))}
-        </OptionList>}
-      </AlgoInputWrap>
+        </S.OptionList>}
+      </S.AlgoInputWrap>
     </>
   );
 }

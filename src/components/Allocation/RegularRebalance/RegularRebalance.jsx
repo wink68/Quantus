@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Option, OptionList, RBInput, RBWrap, ToggleBtn } from './styled';
 import group from '../../../assets/group.svg';
+import * as S from './styled';
 
 const RBOptions = [
   { value: 1, name: '월별' },
@@ -24,26 +24,26 @@ function RegularRebalance() {
 
   return (
     <>
-      <RBWrap onClick={handleToggle}>
-        <RBInput
+      <S.RBWrap onClick={handleToggle}>
+        <S.RBInput
           value={selectedOption}
           placeholder={selectedOption}
         />
-        <ToggleBtn isopen={isOpen}>
+        <S.ToggleBtn isopen={isOpen}>
           <img src={group} alt='toggle_btn' />
-        </ToggleBtn>
-        {isOpen && <OptionList isopen={isOpen}>
+        </S.ToggleBtn>
+        {isOpen && <S.OptionList isopen={isOpen}>
           {RBOptions.map((option) => (
-            <Option
+            <S.Option
               key={option.value}
               onClick={() => handleOption(option.name)}
               selected={selectedOption === option.name}
             >
               {option.name}
-            </Option>
+            </S.Option>
           ))}
-        </OptionList>}
-      </RBWrap>
+        </S.OptionList>}
+      </S.RBWrap>
     </>
   );
 }

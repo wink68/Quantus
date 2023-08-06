@@ -1,38 +1,38 @@
-import { Container, LoginBtn, LogoHeader, Menu, MenuBtn, Navbar, NoticeBtn, Wrapper } from './styled';
 import logo from '../../assets/logo.png';
 import beta from '../../assets/beta.png';
 import newNotice from '../../assets/newNotice.svg';
+import * as S from './styled';
 
 function Header() {
   return (
-    <Wrapper>
-      <Container>
-        <LogoHeader>
+    <S.Wrapper>
+      <S.Container>
+        <S.LogoHeader>
           <img src={logo} alt='logo' />
-          <LoginBtn>로그인 하러가기</LoginBtn>
-        </LogoHeader>
-      </Container>
-      <Container>
-        <Navbar>
-          <Menu>
-            <MenuBtn>백테스트</MenuBtn>
-            <MenuBtn>자산배분</MenuBtn>
-            <MenuBtn>포트폴리오 추출</MenuBtn>
-            <MenuBtn>
+          <S.LoginBtn>로그인 하러가기</S.LoginBtn>
+        </S.LogoHeader>
+      </S.Container>
+      <S.Container>
+        <S.Navbar>
+          <S.Menu>
+            <S.MenuBtn>백테스트</S.MenuBtn>
+            <S.MenuBtn>자산배분</S.MenuBtn>
+            <S.MenuBtn>포트폴리오 추출</S.MenuBtn>
+            <S.MenuBtn>
               <img src={beta} alt='beta_logo' />
               <span>실전 투자</span>
-            </MenuBtn>
-            <MenuBtn>전략 예시</MenuBtn>
-            <MenuBtn>사용권 구매</MenuBtn>
-            <MenuBtn>고객지원</MenuBtn>
-          </Menu>
-          <NoticeBtn>
+            </S.MenuBtn>
+            <S.MenuBtn>전략 예시</S.MenuBtn>
+            <S.MenuBtn>사용권 구매</S.MenuBtn>
+            <S.MenuBtn>고객지원</S.MenuBtn>
+          </S.Menu>
+          <S.NoticeBtn>
             <img src={newNotice} alt='notice' />
             <span>공지사항</span>
-          </NoticeBtn>
-        </Navbar>
-      </Container>
-    </Wrapper>
+          </S.NoticeBtn>
+        </S.Navbar>
+      </S.Container>
+    </S.Wrapper>
   );
 }
 

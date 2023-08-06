@@ -1,7 +1,7 @@
-import { AddBox, AddBtn, AssetTitle, AssetWrap, Container, Wrapper } from './styled';
-import add from '../../../assets/add.svg';
-import Asset from '../Asset/Asset';
 import { useState } from 'react';
+import add from '../../../assets/add.svg';
+import * as S from './styled';
+import Asset from '../Asset/Asset';
 
 function AssetGroup() {
   const [assetList, setAssetList] = useState([]);
@@ -24,19 +24,19 @@ function AssetGroup() {
 
   return (
     <>
-      <AssetTitle>자산군 추가</AssetTitle>
-      <Wrapper>
-        <Container>
+      <S.AssetTitle>자산군 추가</S.AssetTitle>
+      <S.Wrapper>
+        <S.Container>
           {assetList.map((asset) => (
             <Asset key={asset.id} num={asset.id} onRemove={() => handleRemoveAsset(asset.id)} />
           ))}
-          <AssetWrap>
-            <AddBox onClick={handleAddAsset}>
-              <AddBtn src={add} />
-            </AddBox>
-          </AssetWrap>
-        </Container>
-      </Wrapper>
+          <S.AssetWrap>
+            <S.AddBox onClick={handleAddAsset}>
+              <S.AddBtn src={add} />
+            </S.AddBox>
+          </S.AssetWrap>
+        </S.Container>
+      </S.Wrapper>
     </>
   );
 }

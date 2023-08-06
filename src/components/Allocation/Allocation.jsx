@@ -1,29 +1,29 @@
 import { Outlet } from 'react-router-dom';
+import * as S from './styled';
 import Algorithm from './AllocAlgo/Algorithm';
-import Btns from './Btns/Btns';
 import InvestPrice from './InvestPrice/InvestPrice';
-import { AlgoCon, AlgoTitle, Container, Subtitle, TermTitle, Title, Wrapper } from './styled';
 import Term from './Term/Term';
+import Btns from './Btns/Btns';
 
 
 function Allocation() {
   return (
     <>
-      <Wrapper>
-        <Container>
-          <Title>자산배분 설정</Title>
-          <AlgoCon>
-            <AlgoTitle>자산배분 알고리즘</AlgoTitle>
+      <S.Wrapper>
+        <S.Container>
+          <S.Title>자산배분 설정</S.Title>
+          <S.AlgoCon>
+            <S.AlgoTitle>자산배분 알고리즘</S.AlgoTitle>
             <Algorithm />
-            <Subtitle>초기 투자 금액</Subtitle>
+            <S.Subtitle>초기 투자 금액</S.Subtitle>
             <InvestPrice />
             <Outlet />
-            <TermTitle>기간 설정</TermTitle>
+            <S.TermTitle>기간 설정</S.TermTitle>
             <Term />
-          </AlgoCon>
+          </S.AlgoCon>
           <Btns />
-        </Container>
-      </Wrapper>
+        </S.Container>
+      </S.Wrapper>
     </>
   );
 }

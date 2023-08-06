@@ -48,8 +48,8 @@ function Btns() {
                         width='30'
                         height='30'
                         color='#ec6126'
-                        ariaLabel="tail-spin-loading"
-                        radius="0"
+                        ariaLabel='tail-spin-loading'
+                        radius='0'
                         visible={true}
                       />
                     </S.LoadingSpinner>
@@ -64,8 +64,8 @@ function Btns() {
                         width='30'
                         height='30'
                         color='#ec6126'
-                        ariaLabel="tail-spin-loading"
-                        radius="0"
+                        ariaLabel='tail-spin-loading'
+                        radius='0'
                         visible={true}
                       />
                     </S.LoadingSpinner>

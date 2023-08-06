@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Box, CalendarBtn, Container, InputBox, TermWrap, Title } from './styled';
 import calender from '../../../assets/calender.svg';
+import * as S from './styled';
 
 function Term() {
   const startDate = '2003.01.01';
@@ -50,42 +50,42 @@ function Term() {
 
   return (
     <>
-      <TermWrap>
-        <Container>
-          <Box>
-            <Title>시작일 설정</Title>
-            <Container>
-              <InputBox
+      <S.TermWrap>
+        <S.Container>
+          <S.Box>
+            <S.Title>시작일 설정</S.Title>
+            <S.Container>
+              <S.InputBox
                 type='text'
                 value={startValue}
                 onKeyPress={handleStart}
                 onChange={StartChange}
                 onBlur={StartBlur}
               />
-            </Container>
-            <CalendarBtn>
+            </S.Container>
+            <S.CalendarBtn>
               <img src={calender} alt='start_date' />
-            </CalendarBtn>
-          </Box>
-        </Container>
-        <Container>
-          <Box>
-            <Title>종료일 설정</Title>
-            <Container>
-              <InputBox
+            </S.CalendarBtn>
+          </S.Box>
+        </S.Container>
+        <S.Container>
+          <S.Box>
+            <S.Title>종료일 설정</S.Title>
+            <S.Container>
+              <S.InputBox
                 type='text'
                 value={endValue}
                 onKeyPress={handleEnd}
                 onChange={EndChange}
                 onBlur={EndBlur}
               />
-            </Container>
-            <CalendarBtn>
+            </S.Container>
+            <S.CalendarBtn>
               <img src={calender} alt='end_date' />
-            </CalendarBtn>
-          </Box>
-        </Container>
-      </TermWrap>
+            </S.CalendarBtn>
+          </S.Box>
+        </S.Container>
+      </S.TermWrap>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BBIput, BBWrap, Explain, PerName } from './styled';
+import * as S from './styled';
 
 
 function BandRebalance() {
@@ -28,8 +28,8 @@ function BandRebalance() {
 
   return (
     <>
-      <BBWrap>
-        <BBIput
+      <S.BBWrap>
+        <S.BBIput
           type='number'
           min='0'
           max='100'
@@ -39,9 +39,9 @@ function BandRebalance() {
           onBlur={handleRateBlur}
           placeholder={placeholder}
         />
-        <PerName>%</PerName>
-      </BBWrap>
-      <Explain>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Explain>
+        <S.PerName>%</S.PerName>
+      </S.BBWrap>
+      <S.Explain>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</S.Explain>
     </>
   );
 }
